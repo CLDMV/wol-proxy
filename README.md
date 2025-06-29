@@ -45,7 +45,7 @@ Make a `POST` request to `/wake` with a JSON body:
 ```bash
 curl -X POST http://<proxy-ip>:3000/wake \
   -H "Content-Type: application/json" \
-  -d '{"mac": "f8:01:b4:68:bc:22", "ip": "10.42.3.255", "port": 9}'
+  -d '{"mac": "00:11:22:33:44:55", "ip": "10.0.0.100", "port": 9}'
 ```
 
 **Successful Response:**
@@ -91,7 +91,7 @@ To secure it:
 Clone and run locally:
 
 ```bash
-git clone https://github.com/your-username/wol-proxy.git
+git clone https://github.com/CLDMV/wol-proxy.git
 cd wol-proxy
 npm install
 node index.js
@@ -101,8 +101,11 @@ node index.js
 
 ## 📜 License
 
-MIT
+This project is licensed under the GNU General Public License v3.0 (GPL-3.0).
 
----
+You may use, modify, and redistribute this software under the terms of the GPL-3.0 license.
 
-Made with ⚡ by [Your Name]
+See the full license text in the [LICENSE](./LICENSE) file or at  
+https://www.gnu.org/licenses/gpl-3.0.html
+
+© 2025 CLDMV
