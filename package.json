@@ -1,0 +1,28 @@
+{
+  "name": "@cldmv/wol-proxy",
+  "version": "1.0.0",
+  "description": "A simple, cross-platform Wake-on-LAN (WoL) HTTP proxy that lets you power on devices on your network by sending an HTTP request.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+	"repository": {
+    "type": "git",
+    "url": "git+https://github.com/CLDMV/wol-proxy.git"
+  },
+  "bin": {
+    "wol-proxy": "index.js"
+  },
+  "keywords": [],
+	"author": "Shinrai <git@cldmv.net> (http://cldmv.net)",
+	"license": "GPL-3.0",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/CLDMV/wol-proxy/issues"
+  },
+  "homepage": "https://github.com/CLDMV/wol-proxy#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "wake_on_lan": "^1.0.0"
+  }
+}
