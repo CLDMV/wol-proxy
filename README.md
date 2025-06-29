@@ -99,6 +99,51 @@ node index.js
 
 ---
 
+
+---
+
+## 🛠 Running as a System Service (Ubuntu, CentOS, Fedora, etc.)
+
+After installing `wol-proxy` globally with npm, it will automatically **attempt to install a systemd service** during post-install (on compatible Linux systems).
+
+If successful, you’ll see a confirmation message and can start the service immediately.
+
+---
+
+### ✅ 1. Manual Setup (if automatic setup fails or is skipped)
+
+You can still manually enable the service using the bundled `.service` file:
+
+```bash
+sudo cp $(npm root -g)/@cldmv/wol-proxy/wol-proxy.service /etc/systemd/system/wol-proxy.service
+```
+
+> This copies the service file from the global npm module into the systemd directory.
+
+### ✅ 2. Enable and start the service
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl enable wol-proxy
+sudo systemctl start wol-proxy
+```
+
+### 🔍 Check service status
+
+```bash
+sudo systemctl status wol-proxy
+```
+
+### 📋 View logs
+
+```bash
+journalctl -u wol-proxy -f
+```
+
+`wol-proxy` will now run in the background and start automatically at boot.
+
+---
+
 ## 📜 License
 
 This project is licensed under the GNU General Public License v3.0 (GPL-3.0).

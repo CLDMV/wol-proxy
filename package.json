@@ -13,6 +13,9 @@
   "bin": {
     "wol-proxy": "index.js"
   },
+	"scripts": {
+	  "postinstall": "node postinstall.js"
+	},
   "keywords": [],
 	"author": "Shinrai <git@cldmv.net> (http://cldmv.net)",
 	"license": "GPL-3.0",
@@ -21,6 +24,16 @@
     "url": "https://github.com/CLDMV/wol-proxy/issues"
   },
   "homepage": "https://github.com/CLDMV/wol-proxy#readme",
+	"publishConfig": {
+	  "access": "public"
+	},
+	"files": [
+	  "index.js",
+	  "postinstall.js",
+	  "wol-proxy.service",
+	  "README.md",
+	  "LICENSE"
+	],
   "dependencies": {
     "express": "^5.1.0",
     "wake_on_lan": "^1.0.0"

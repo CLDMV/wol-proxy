@@ -1,0 +1,14 @@
+[Unit]
+Description=Wake-on-LAN HTTP Proxy
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/env wol-proxy
+Restart=on-failure
+RestartSec=3
+Environment=PORT=3000
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
