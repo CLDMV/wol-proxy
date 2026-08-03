@@ -1,41 +1,49 @@
 {
   "name": "@cldmv/wol-proxy",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A simple, cross-platform Wake-on-LAN (WoL) HTTP proxy that lets you power on devices on your network by sending an HTTP request.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "node postinstall.js",
+    "build": "echo '✓ no build step (stopgap: the CI coverage-badge job runs `npm run build`)'",
+    "build:ci": "echo '✓ no build step'",
+    "test": "node tests/run-vitest.mjs",
+    "test:watch": "vitest --config .configs/vitest.config.mjs",
+    "coverage": "node tests/run-vitest.mjs --coverage-quiet",
+    "ci:coverage": "npm run coverage"
   },
-	"repository": {
+  "repository": {
     "type": "git",
     "url": "git+https://github.com/CLDMV/wol-proxy.git"
   },
   "bin": {
     "wol-proxy": "index.js"
   },
-	"scripts": {
-	  "postinstall": "node postinstall.js"
-	},
   "keywords": [],
-	"author": "Shinrai <git@cldmv.net> (http://cldmv.net)",
-	"license": "GPL-3.0",
+  "author": "Shinrai <git@cldmv.net> (http://cldmv.net)",
+  "license": "GPL-3.0",
   "type": "commonjs",
   "bugs": {
     "url": "https://github.com/CLDMV/wol-proxy/issues"
   },
   "homepage": "https://github.com/CLDMV/wol-proxy#readme",
-	"publishConfig": {
-	  "access": "public"
-	},
-	"files": [
-	  "index.js",
-	  "postinstall.js",
-	  "wol-proxy.service",
-	  "README.md",
-	  "LICENSE"
-	],
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "index.js",
+    "postinstall.js",
+    "wol-proxy.service",
+    "README.md",
+    "LICENSE"
+  ],
   "dependencies": {
     "express": "^5.1.0",
     "wake_on_lan": "^1.0.0"
+  },
+  "devDependencies": {
+    "@cldmv/vitest-runner": "^1.2.0",
+    "@vitest/coverage-v8": "^4.1.10",
+    "vitest": "^4.1.10"
   }
 }
