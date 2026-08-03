@@ -4,7 +4,7 @@
  *     const port = process.env.PORT || 3000;
  *     app.listen(port, '0.0.0.0', () => console.log(`WOL proxy on port ${port}`));
  *
- * `tests/wake-endpoint.test.mjs` covers the `process.env.PORT` (truthy) branch by
+ * `tests/wake-endpoint.test.vitest.mjs` covers the `process.env.PORT` (truthy) branch by
  * setting `PORT=0` for an ephemeral real bind. This file covers the `|| 3000`
  * fallback branch (PORT unset) in a separate process (the OOM-safe runner spawns
  * one vitest child process per test file, so env vars and the CJS `require.cache`
