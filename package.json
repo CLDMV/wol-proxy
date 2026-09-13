@@ -1,6 +1,6 @@
 {
   "name": "@cldmv/wol-proxy",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A simple, cross-platform Wake-on-LAN (WoL) HTTP proxy that lets you power on devices on your network by sending an HTTP request.",
   "main": "index.js",
   "scripts": {
@@ -43,7 +43,7 @@
   },
   "devDependencies": {
     "@cldmv/vitest-runner": "^1.2.0",
-    "@vitest/coverage-v8": "^4.1.10",
-    "vitest": "^4.1.10"
+    "@vitest/coverage-v8": "^5.0.0",
+    "vitest": "^5.0.0"
   }
 }
