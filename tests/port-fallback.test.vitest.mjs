@@ -26,6 +26,7 @@ const cjsRequire = createRequire(import.meta.url);
 
 let capturedArgs;
 let logSpy;
+let loggedWith;
 
 beforeAll(async () => {
 	delete process.env.PORT;
@@ -51,8 +52,20 @@ beforeAll(async () => {
 	delete cjsRequire.cache[indexPath];
 	cjsRequire(indexPath);
 
-	// Let the queued microtask (the stubbed listen's callback) flush.
+	// Let the queued microtask (the stubbed listen's callback) flush. vitest 5
+	// schedules its own microtasks around test setup, so a single setImmediate
+	// tick is no longer guaranteed to run after our queueMicrotask callback —
+	// flush the microtask queue explicitly first, then the macrotask queue.
+	await new Promise((resolve) => queueMicrotask(resolve));
 	await new Promise((resolve) => setImmediate(resolve));
+
+	// vitest 5 defaults clearMocks to true (was false in vitest 4), so it now
+	// calls vi.clearAllMocks() before every `it()` — including this file's
+	// first one — which wipes logSpy's recorded call before the second `it()`
+	// gets to check it. Snapshot the call here, right after it actually
+	// happens, instead of asserting against the spy's live (auto-cleared)
+	// state later.
+	loggedWith = logSpy.mock.calls[0]?.[0];
 });
 
 afterAll(() => {
@@ -68,6 +81,6 @@ describe("module bootstrap: PORT env fallback", () => {
 	});
 
 	it("logs the startup message with the resolved port once listen's callback fires", () => {
-		expect(logSpy).toHaveBeenCalledWith("WOL proxy on port 3000");
+		expect(loggedWith).toBe("WOL proxy on port 3000");
 	});
 });
