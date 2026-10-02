@@ -1,6 +1,6 @@
 {
   "name": "@cldmv/wol-proxy",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A simple, cross-platform Wake-on-LAN (WoL) HTTP proxy that lets you power on devices on your network by sending an HTTP request.",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,8 @@
     "test": "node tests/run-vitest.mjs",
     "test:watch": "vitest --config .configs/vitest.config.mjs",
     "coverage": "node tests/run-vitest.mjs --coverage-quiet",
-    "ci:coverage": "npm run coverage"
+    "ci:coverage": "npm run coverage",
+    "fix:headers": "fix-headers --config .configs/fix-headers.json"
   },
   "repository": {
     "type": "git",
@@ -42,6 +43,8 @@
     "wake_on_lan": "^1.0.0"
   },
   "devDependencies": {
+    "@cldmv/configs": "^1.2.0",
+    "@cldmv/fix-headers": "^2.1.1",
     "@cldmv/vitest-runner": "^1.2.0",
     "@vitest/coverage-v8": "^5.0.0",
     "vitest": "^5.0.0"
