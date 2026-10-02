@@ -1,4 +1,19 @@
 /**
+ *
+ *	@Project: @cldmv/wol-proxy
+ *	@Filename: /tests/port-fallback.test.vitest.mjs
+ *	@Date: 2026-08-02T23:39:44-07:00 (1785739184)
+ *	@Author: Nate Corcoran <CLDMV>
+ *	@Email: <Shinrai@users.noreply.github.com>
+ *	-----
+ *	@Last modified by: Nate Corcoran <CLDMV> (Shinrai@users.noreply.github.com)
+ *	@Last modified time: 2026-10-02T11:30:40-07:00 (1790965840)
+ *	-----
+ *	@Copyright: Copyright (c) 2013-2026 Catalyzed Motivation Inc. All rights reserved.
+ *
+ */
+
+/**
  * @fileoverview Characterizes `index.js`'s top-level port-selection line:
  *
  *     const port = process.env.PORT || 3000;
