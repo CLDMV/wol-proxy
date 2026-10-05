@@ -8,7 +8,7 @@ Use it as a local utility or run it on a remote VM to expose WoL via an HTTP API
 
 ### Latest: v1.0.10 (October 2026)
 
-- **Dev-tooling dependency bump ([#35](https://github.com/CLDMV/wol-proxy/pull/35))** — `@cldmv/fix-headers` moves from 2.1.1 to 2.1.4, the tool that maintains the repository's file headers. It produced no header changes here, so only `package.json` and the lockfile changed. The Express server and `postinstall.js` are unchanged; it's a drop-in replacement for the previous version.
+- **Dev-tooling dependency bumps ([#35](https://github.com/CLDMV/wol-proxy/pull/35), [#38](https://github.com/CLDMV/wol-proxy/pull/38), [#40](https://github.com/CLDMV/wol-proxy/pull/40))** — `@cldmv/fix-headers` moves to 2.2.0, `@cldmv/configs` to 1.2.4 and `@cldmv/vitest-runner` to 1.5.3. No file headers changed and no runtime code changed: the Express server and `postinstall.js` are as in the previous version, so it's a drop-in replacement.
 - [View full v1.0.10 Changelog](https://github.com/CLDMV/wol-proxy/blob/master/docs/changelog/v1/v1.0.10.md)
 
 ### Recent Releases
