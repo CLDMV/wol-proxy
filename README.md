@@ -4,6 +4,22 @@
 
 Use it as a local utility or run it on a remote VM to expose WoL via an HTTP API.
 
+## ✨ What's New
+
+### Latest: v1.0.10 (October 2026)
+
+- **Dev-tooling dependency bumps ([#35](https://github.com/CLDMV/wol-proxy/pull/35), [#38](https://github.com/CLDMV/wol-proxy/pull/38), [#40](https://github.com/CLDMV/wol-proxy/pull/40))** — `@cldmv/fix-headers` moves to 2.2.0, `@cldmv/configs` to 1.2.4 and `@cldmv/vitest-runner` to 1.5.3. No file headers changed and no runtime code changed: the Express server and `postinstall.js` are as in the previous version, so it's a drop-in replacement.
+- [View full v1.0.10 Changelog](https://github.com/CLDMV/wol-proxy/blob/master/docs/changelog/v1/v1.0.10.md)
+
+### Recent Releases
+
+- **v1.0.9** (October 2026) — CI only: the in-repo PR mirror job now always runs and reports under a non-required name instead of being skipped ([Changelog](https://github.com/CLDMV/wol-proxy/blob/master/docs/changelog/v1/v1.0.9.md))
+- **v1.0.8** (October 2026) — CI only: a skipped PR-run mirror job no longer satisfies the `✅ Required PR Check` ruleset gate ([Changelog](https://github.com/CLDMV/wol-proxy/blob/master/docs/changelog/v1/v1.0.8.md))
+- **v1.0.7** (October 2026) — workflows synced to the CLDMV/.github v4.29.2 templates, shared fix-headers config (comment-only headers in `index.js` and `postinstall.js`), vitest 5.0.2; no runtime change ([Changelog](https://github.com/CLDMV/wol-proxy/blob/master/docs/changelog/v1/v1.0.7.md))
+- **v1.0.6** (September 2026) — vitest 5 test toolchain and a CI Node matrix of 22.12.0–26; Express's transitive `qs` moves to 6.16.0 in the lockfile ([Changelog](https://github.com/CLDMV/wol-proxy/blob/master/docs/changelog/v1/v1.0.6.md))
+
+📚 **For complete version history and detailed release notes, see the [docs/changelog/](https://github.com/CLDMV/wol-proxy/tree/master/docs/changelog/) folder.**
+
 ---
 
 ## 📦 Installation
