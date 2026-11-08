@@ -1,8 +1,18 @@
 {
   "name": "@cldmv/wol-proxy",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "A simple, cross-platform Wake-on-LAN (WoL) HTTP proxy that lets you power on devices on your network by sending an HTTP request.",
   "main": "index.js",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": ">=22.22.0",
+      "onFail": "error"
+    }
+  },
   "scripts": {
     "postinstall": "node postinstall.js",
     "build": "echo '✓ no build step (stopgap: the CI coverage-badge job runs `npm run build`)'",
